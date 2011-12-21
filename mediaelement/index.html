@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HTML5 MediaElement</title>   
+    <script src="jquery.js"></script>   
+    <script src="mediaelement-and-player.js"></script>
+    <link rel="stylesheet" href="mediaelementplayer.min.css" />
+</head>
+<body>
+
+<h1>MediaElementPlayer.js</h1>
+
+<p>Audio player</p>
+
+<h2>mp3 file</h2>
+<audio controls="controls" src="http://www.anetstation.com/MP3/Will_Brady_-_Buckets_Of_Rain.mp3" type="audio/mp3"></audio>
+
+<h2>wma stream using video tag<h2>
+<video controls="controls" preload="none" src="http://streaming.bluefm.com.ar/blue" type="audio/wma"></video>
+
+<h2>wma stream</h2>
+<audio id="audio-bloop2" controls="controls" preload="none">
+  <source src="http://streaming.bluefm.com.ar/blue" type="audio/wma" />
+</audio>
+
+<h2>shoutcast using File1=</h2>
+<audio id="audio-bloop4" controls="controls" preload="none">
+  <source src="http://64.12.61.1:80/stream/1046;stsream.mp3" type="audio/mpeg" />
+</audio>
+
+<h2>m3u using content</h2>
+<audio id="audio-bloop5" controls="controls" preload="none">
+  <source src="http://streaming.centralonline.net:8000/kisfm" type="audio/mpeg" />
+</audio>
+
+<h2>shoutcast using File1=</h2>
+<audio id="audio-bloop7" controls="controls" preload="none">
+  <source src="http://live128.radioprob.ro:9999" type="audio/mpeg" />
+</audio>
+
+<h2>ogg stream</h2>
+<audio id="audio-bloop8" controls="controls" preload="none">
+  <source src="http://wroclaw.radio.pionier.net.pl:8000/pl/radiokrakow.ogg" type="audio/ogg" />
+</audio>
+
+<h2>.aac stream</h2>
+<audio id="audio-bloop11" controls="controls" preload="none">
+  <source src="http://174.122.121.106:8000/movidita-aac.aac" type="audio/mp4" />
+</audio>
+
+<h2>** aacp stream</h2>
+<audio id="audio-bloop12" controls="controls" preload="none">
+  <source src="http://streaming.softcast.com.au:8002/;stream.mp4" type="audio/mp4" />
+</audio>
+
+<h2>shoutcast: pls content File1=</h2>
+<audio id="audio-bloop13" controls="controls" preload="none">
+  <source src="http://nexstreaming.com.br:8018/;stream.mp3" type="audio/mp3" />
+</audio>
+
+<h2>.ram -> .pls -> shoutcast stream</h2>
+<audio id="audio-bloop15" controls="controls" preload="none">
+  <source src="http://91.121.29.162:8000/;stream.mp3" type="audio/mpeg" />
+</audio>
+
+<h2>video/x-ms-asf stream with video tag + flash</h2>
+<video width="320" height="240" controls="controls" preload="none">
+    <!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
+    <object width="320" height="240" type="application/x-shockwave-flash" data="flashmediaelement.swf">
+        <param name="movie" value="flashmediaelement.swf" />
+        <param name="flashvars" value="controls=true&streamer=http://174.122.121.106:8000/movidita-aac.aac&type=audio/mp4" />
+        <img src="no.jpg" width="320" height="240" alt="No video playback capabilities" />
+    </object>
+</video>
+
+<h2>rtmp stream with video tag + flash</h2>
+<video width="320" height="240" controls="controls" preload="none">
+    <!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
+    <object width="320" height="240" type="application/x-shockwave-flash" data="flashmediaelement.swf">
+        <param name="movie" value="/mediaelement/flashmediaelement.swf" />
+        <param name="flashvars" value="controls=true&streamer=rtmp://rtmp.cdn.00189.upx.net.br/00189&type=video" />
+        <img src="no.jpg" width="320" height="240" alt="No video playback capabilities" />
+    </object>
+</video>
+
+<h2>asx stream</h2>
+<audio id="audio-bloop3" controls="controls" preload="none">
+  <source src="http://asahi.co.jp/webio/asx/rnews.asx" type="audio/x-ms-asx" />
+</audio>
+
+<h2>mms://... .asf</h2>
+<audio id="audio-bloop6" controls="controls" preload="none">
+  <source src="mms://wmserv.asahi.co.jp/abc/radio/rnews.asf" />
+</audio>
+
+<h2>icy stream</h2>
+<audio id="audio-bloop9" controls="controls" preload="none">
+  <source src="http://64.15.132.62:9062;stream.mp3" type="audio/mpeg" />
+</audio>
+
+<h2>.qt content + replace icy:// with http://</h2>
+<audio id="audio-bloop10" controls="controls" preload="none">
+  <source src="http://213.246.51.97:8032;stream.mp3" type="audio/mpeg" />
+</audio>
+
+<script>
+    $('audio,video').mediaelementplayer({ plugins: ['silverlight', 'flash'], pluginPath: '/mediaelement/',
+        flashName: 'flashmediaelement.swf', silverlightName: 'silverlightmediaelement.xap',
+        enablePluginDebug: false, error: function (err) { /*console.info(err);*/ }, startVolume: 0.8, 
+        features: ['playpause','progress','current','duration','tracks','volume','fullscreen'],
+        success: function (mediaElement, domObject) {
+            //console.log(mediaElement, domObject);
+            // mediaElement.addEventListener('timeupdate', function() { console.log(arguments); }); 
+            // mediaElement.addEventListener('progress', function() { console.log(arguments); }); 
+            // mediaElement.addEventListener('canplay', function() { console.log(arguments); }); 
+            // mediaElement.addEventListener('ended', function() { console.log(arguments); }); 
+            // mediaElement.addEventListener('playing', function() { console.log(arguments); }); 
+            // mediaElement.addEventListener('loadedmetadata', function() { console.log(arguments); }); 
+            // mediaElement.addEventListener('loadeddata', function() { console.log(arguments); });
+        }
+    });
+</script>
+
+</body>
+</html>

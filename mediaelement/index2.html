@@ -1,0 +1,19 @@
+﻿<h2>.aac stream</h2>
+<audio id="audio-bloop11" controls="controls" preload="none">
+  <source src="http://174.122.121.106:8000/ella-aac.aac" type="audio/mp4" />
+</audio>
+
+<h2>** aacp stream</h2>
+<audio id="audio-bloop12" controls="controls" preload="none">
+  <source src="http://streaming.softcast.com.au:8002/" type="audio/mp4" />
+</audio>
+
+<h2>video/x-ms-asf stream with video tag + flash</h2>
+<video width="320" height="240" controls="controls" preload="none">
+    <!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
+    <object width="320" height="240" type="application/x-shockwave-flash" data="flashmediaelement.swf">
+        <param name="movie" value="flashmediaelement.swf" />
+        <param name="flashvars" value="controls=true&streamer=http://174.122.121.106:8000/ella-aac.aac&type=audio/mp4" />
+        <img src="no.jpg" width="320" height="240" alt="No video playback capabilities" />
+    </object>
+</video>
