@@ -1,19 +1,39 @@
-﻿<h2>.aac stream</h2>
-<audio id="audio-bloop11" controls="controls" preload="none">
-  <source src="http://174.122.121.106:8000/ella-aac.aac" type="audio/mp4" />
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HTML5 MediaElement</title>   
+    <script src="jquery.js"></script>   
+    <script src="mediaelement-and-player.js"></script>
+    <link rel="stylesheet" href="mediaelementplayer.min.css" />
+</head>
+<body>
+
+<h1>MediaElementPlayer.js</h1>
+
+<p>Audio player</p>
+
+<audio id="audio-bloop9" controls="controls" preload="none">
+  <source src="http://aacplus.hb-stream.net:80/;stream.mp4" type="audio/mp4" />
 </audio>
 
-<h2>** aacp stream</h2>
-<audio id="audio-bloop12" controls="controls" preload="none">
-  <source src="http://streaming.softcast.com.au:8002/" type="audio/mp4" />
-</audio>
+<script>
+    $('audio,video').mediaelementplayer({ plugins: ['flash', 'silverlight'], pluginPath: '/mediaelement/',
+        flashName: 'flashmediaelement.swf', silverlightName: 'silverlightmediaelement.xap',
+        enablePluginDebug: false, error: function (err) { /*console.info(err);*/ }, startVolume: 0.8, 
+        features: ['playpause','progress','current','duration','tracks','volume','fullscreen'],
+        success: function (mediaElement, domObject) {
+            //console.log(mediaElement, domObject);
+            // mediaElement.addEventListener('timeupdate', function() { console.log(arguments); }); 
+            // mediaElement.addEventListener('progress', function() { console.log(arguments); }); 
+            // mediaElement.addEventListener('canplay', function() { console.log(arguments); }); 
+            // mediaElement.addEventListener('ended', function() { console.log(arguments); }); 
+            // mediaElement.addEventListener('playing', function() { console.log(arguments); }); 
+            // mediaElement.addEventListener('loadedmetadata', function() { console.log(arguments); }); 
+            // mediaElement.addEventListener('loadeddata', function() { console.log(arguments); });
+        }
+    });
+</script>
 
-<h2>video/x-ms-asf stream with video tag + flash</h2>
-<video width="320" height="240" controls="controls" preload="none">
-    <!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
-    <object width="320" height="240" type="application/x-shockwave-flash" data="flashmediaelement.swf">
-        <param name="movie" value="flashmediaelement.swf" />
-        <param name="flashvars" value="controls=true&streamer=http://174.122.121.106:8000/ella-aac.aac&type=audio/mp4" />
-        <img src="no.jpg" width="320" height="240" alt="No video playback capabilities" />
-    </object>
-</video>
+</body>
+</html>
