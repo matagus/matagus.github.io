@@ -1,4 +1,5 @@
 <h1>Facebook Test App</h1>
+<div class="fb-like" data-send="true" data-width="450" data-show-faces="true" data-ref="github"></div>
 <h2>Browse radio catalog</h2>
 <ul>
     <li><a href="/radios/one-1/">Station One</a></li>
@@ -10,4 +11,12 @@
     <li><a href="/radios/seven-7/">Station Seven</a></li>
     <li><a href="/radios/eight-8/">FBi Radio </a></li>
     <li><a href="/radios/nine-9/">Eclectic 24</a></li>
-</ul>
+</uli>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
