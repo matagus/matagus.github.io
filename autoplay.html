@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>iPad Sound Test  - Auto Play</title>
+</head>
+<body>
+    <audio id="audio" src="http://gramotunes.com/Co-Co.mp3" controls="controls" loop="loop">
+    </audio>
+    <script type="text/javascript">
+      window.onload = function() {
+          var audioPlayer = document.getElementById("audio");
+          audioPlayer.load();
+          audioPlayer.play();
+      };
+    </script>
+</body>
+</html>
