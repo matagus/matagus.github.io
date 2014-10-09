@@ -27,6 +27,20 @@
   // load in non-clustered markers from the layer. Instead we add just the
   // backing tileLayer, and then use the featureLayer only for its data.
   var map = L.mapbox.map('map', 'matagus.jnhjcp52');
+  var geojson = "https://raw.githubusercontent.com/matagus/matagus.github.com/a4f0c4bc3d5e96ccf995d544e122bf4691830acb/geo/tuneins.geojson";
+
+
+  // Since featureLayer is an asynchronous method, we use the `.on('ready'`
+  // call to only use its marker data once we know it is actually loaded.
+  L.mapbox.featureLayer('examples.map-h61e8o8e').on('ready', function(e) {
+    // The clusterGroup gets each marker in the group added to it
+    // once loaded, and then is added to the map
+    var clusterGroup = new L.MarkerClusterGroup();
+    e.target.eachLayer(function(layer) {
+        clusterGroup.addLayer(layer);
+    });
+    map.addLayer(clusterGroup);
+  });
 </script>
 
 </body>
