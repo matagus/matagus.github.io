@@ -1,45 +1,76 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset=utf-8 />
-  <title>Markercluster with Mapbox marker data</title>
+  <title>People listening radio stations right now at Streema.com</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
   <style>
     body { margin:0; padding:0; }
     #map { position:absolute; top:0; bottom:0; width:100%; }
+    #map div.leaflet-popup-content img { float: left; }
+    #map div.leaflet-popup-content p { float: right; width: 70%; }
+    #map div.leaflet-popup-content { height: 80px; }
   </style>
   <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+  <script src="//matagus.github.io/geo/data.js"></script>
+  <script src='moment-with-locales.js'></script>
 </head>
+<!-- Set the display of this container to none so we can
+     add it programmatically to `legendControl` -->
+<div id='legend' style='display:none;'>
+  <h2>People listening radio stations</h2>
+  <p>This map shows where people is listening to radio stations from
+    for the last 24hs (*) using <a
+    href="http://streema.com/?utm_source=geomap&utm_medium=&utm_campaign=v1">
+    Streema.com</a>.</p>
+  <small>* Information refreshed every 30 seconds.</small>
+</div>
 <body>
   <div id='map'></div>
 </body>
 <script>
-  L.mapbox.accessToken = 'pk.eyJ1IjoibWF0YWd1cyIsImEiOiJHaEdPVEQwIn0.-Ozf1tLmk77e8WsCXkxw1A';
-  // Here we don't use the second argument to map, since that would automatically
-  // load in non-clustered markers from the layer. Instead we add just the
-  // backing tileLayer, and then use the featureLayer only for its data.
-  var map = L.mapbox.map('map', 'matagus.jni44nnb');
-  var geojsonUrl = "https://raw.githubusercontent.com/matagus/matagus.github.com/a4f0c4bc3d5e96ccf995d544e122bf4691830acb/geo/tuneins.geojson";
+  $(document).ready(function() {
+    L.mapbox.accessToken = 'pk.eyJ1IjoibWF0YWd1cyIsImEiOiJHaEdPVEQwIn0.-Ozf1tLmk77e8WsCXkxw1A';
+    var utmQs = "?utm_source=geomap&utm_medium=&utm_campaign=v1";
+    var map = L.mapbox.map('map', 'matagus.jni44nnb');
 
-  $.getJSON(geojsonUrl, function(data) {
-    // Since featureLayer is an asynchronous method, we use the `.on('ready'`
-    // call to only use its marker data once we know it is actually loaded.
-    L.mapbox.featureLayer(data).on('ready', function(e) {
-      // The clusterGroup gets each marker in the group added to it
-      // once loaded, and then is added to the map
-      var clusterGroup = new L.MarkerClusterGroup();
-      e.target.eachLayer(function(layer) {
-          clusterGroup.addLayer(layer);
-      });
-      map.addLayer(clusterGroup);
-    });
+    map.attributionControl.addAttribution(
+      'Brought to you by <a target="_blank" href="http://streema.com/' + utmQs +
+      '">Streema &copy;</a>'
+    );
+
+    map.legendControl.addLegend(document.getElementById('legend').innerHTML);
+    var markers = new L.MarkerClusterGroup();
+
+    /* geodata variable comes from //matagus.github.io/geo/data.js ! */
+    for (var i = 0; i < geoData.length; i++) {
+        var a = geoData[i];
+        var stationName = a[2].replace("_", "  ", "gi");
+        var stationUrl = "http://streema.com/radios/" + a[2] + utmQs;
+
+        var htmlText = '<img src="https://d2uykijsw1jrmd.cloudfront.net/media/cache/60/9b/609b8395e4efc71cf4aada0f7200aa5e.jpg" alt="'
+          + stationName + '"/><p>Listening to <a target="_blank" href="' +
+          stationUrl + '">' + stationName  +
+          '</a> since ' + moment(a[3], "YYYYMMDDHHmm").fromNow() +  '</p>';
+
+        var marker = L.marker(new L.LatLng(a[1], a[0]), {
+          icon: L.mapbox.marker.icon({
+            'marker-symbol': 'music',
+            'marker-color': 'f5c272',
+            'marker-size': 'medium'
+          }),
+          title: "Listening to " + stationName
+        });
+
+        marker.bindPopup(htmlText);
+        markers.addLayer(marker);
+    }
+    map.addLayer(markers);
   });
 </script>
 </html>
