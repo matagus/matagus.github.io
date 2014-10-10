@@ -22,10 +22,9 @@
 <!-- Set the display of this container to none so we can
      add it programmatically to `legendControl` -->
 <div id='legend' style='display:none;'>
-  <h2>Online Radio Listeners around the world - Streema</h2>
+  <h2>World Online Radio Listeners</h2>
   <p>This map shows where people are listening to radio stations in the last
-    24hs (*) on <a
-    href="http://streema.com/?utm_source=geomap&utm_medium=&utm_campaign=v1">
+    24hs (*) on <a href="http://streema.com/?utm_source=geomap&utm_medium=&utm_campaign=v1">
     Streema.com</a>.</p>
   <small>* Information refreshed every 30 seconds.</small>
 </div>
@@ -63,7 +62,7 @@
         }
 
         var htmlText = '<img src="https://d2uykijsw1jrmd.cloudfront.net/media/cache/60/9b/609b8395e4efc71cf4aada0f7200aa5e.jpg" alt="'
-          + stationName + '"/><p>Guest userl istening to <a target="_blank" href="' +
+          + stationName + '"/><p>Guest user listening to <a target="_blank" href="' +
           stationUrl + '">' + stationName  + '</a> from ' + appHtml + '</p>';
 
         var marker = L.marker(new L.LatLng(a[1], a[0]), {
