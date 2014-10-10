@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset=utf-8 />
-  <title>People listening radio stations right now at Streema.com</title>
+  <title>World Listeners - Streema</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -18,14 +18,13 @@
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
   <script src="//matagus.github.io/geo/data.js"></script>
-  <script src='moment-with-locales.js'></script>
 </head>
 <!-- Set the display of this container to none so we can
      add it programmatically to `legendControl` -->
 <div id='legend' style='display:none;'>
   <h2>People listening radio stations</h2>
-  <p>This map shows where people is listening to radio stations from
-    for the last 24hs (*) using <a
+  <p>This map shows where people are listening to radio stations in the last
+    24hs (*) on <a
     href="http://streema.com/?utm_source=geomap&utm_medium=&utm_campaign=v1">
     Streema.com</a>.</p>
   <small>* Information refreshed every 30 seconds.</small>
@@ -53,10 +52,19 @@
         var stationName = a[2].replace("_", "  ", "gi");
         var stationUrl = "http://streema.com/radios/" + a[2] + utmQs;
 
+        var appHtml = '<a href="http://streema.com/" target="_blank">Streema Mobile Web</a>';
+        var rand = Math.random();
+        if (rand > 0.7) {
+          appHtml = '<a href="https://itunes.apple.com/us/app/simple-radio-tune-in-to-your/id891132290?mt=8" target="_blank">SimpleRadio for iOS</a>';
+        } else {
+          if (rand > 0.2) {
+              appHtml = '<a href="http://streema.com/" target="_blank">Streema Desktop Web</a>';
+          }
+        }
+
         var htmlText = '<img src="https://d2uykijsw1jrmd.cloudfront.net/media/cache/60/9b/609b8395e4efc71cf4aada0f7200aa5e.jpg" alt="'
-          + stationName + '"/><p>Listening to <a target="_blank" href="' +
-          stationUrl + '">' + stationName  +
-          '</a> since ' + moment(a[3], "YYYYMMDDHHmm").fromNow() +  '</p>';
+          + stationName + '"/><p>Guest userl istening to <a target="_blank" href="' +
+          stationUrl + '">' + stationName  + '</a> from ' + appHtml + '</p>';
 
         var marker = L.marker(new L.LatLng(a[1], a[0]), {
           icon: L.mapbox.marker.icon({
