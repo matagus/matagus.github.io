@@ -7,34 +7,62 @@
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
+  <script type="text/javascript" src="web_socket.js"> </script>
+  <script type="text/javascript" src="swfobject.js"> </script>
   <style>
     body { margin:0; padding:0; }
     #map { position:absolute; top:0; bottom:0; width:100%; }
+    #map div.leaflet-popup-content { width: 250px !important; }
     #map div.leaflet-popup-content img { float: left; }
-    #map div.leaflet-popup-content p { float: right; width: 70%; }
-    #map div.leaflet-popup-content { height: 80px; }
+    #map div.leaflet-popup-content p { float: right; width: 70%; font-size: 1em; margin: 0; color: gray; }
+    #map div.leaflet-popup-content p.title { color: black; font-size: 1.1em; margin: 0 0 5px; }
+    #map div.leaflet-popup-content { height: 110px; }
   </style>
   <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
-  <script src="//matagus.github.io/geo/data.js"></script>
 </head>
 <!-- Set the display of this container to none so we can
      add it programmatically to `legendControl` -->
 <div id='legend' style='display:none;'>
   <h2>World Online Radio Listeners</h2>
   <p>This map shows where people are listening to radio stations in the last
-    24hs (*) on <a href="http://streema.com/?utm_source=geomap&utm_medium=&utm_campaign=v1">
+    right now on <a href="http://streema.com/?utm_source=geomap&utm_medium=&utm_campaign=v1">
     Streema.com</a>.</p>
-  <small>* Information refreshed every 30 seconds.</small>
 </div>
 <body>
   <div id='map'></div>
 </body>
 <script>
   $(document).ready(function() {
-    L.mapbox.accessToken = 'pk.eyJ1IjoibWF0YWd1cyIsImEiOiJHaEdPVEQwIn0.-Ozf1tLmk77e8WsCXkxw1A';
+    var WEB_SOCKET_SWF_LOCATION = "WebSocketMain.swf";
     var utmQs = "?utm_source=geomap&utm_medium=&utm_campaign=v1";
+
+    var buildHtmlText = function(event) {
+
+      var defaultImageUrl = "http://d2mglzznjku7il.cloudfront.net/img/radio-placeholder.jpg";
+      var stationUrl = "http://streema.com/radios/" + event.slug + utmQs;
+
+      var appHtmlMap = {
+        'mobile': 'on <a href="http://streema.com/" target="_blank">Streema Mobile Web</a>',
+        'simpleradio': 'from <a href="https://itunes.apple.com/us/app/simple-radio-tune-in-to-your/id891132290?mt=8" target="_blank">SimpleRadio for iOS</a>',
+        'desktop': 'on <a href="http://streema.com/" target="_blank">Streema Desktop Web</a>'
+      }
+
+      return '<img onerror="this.width=this.height=50; this.src=\'http://d2mglzznjku7il.cloudfront.net/img/radio-placeholder.jpg\'" src="' + event.image + '" alt="'
+        + event.radio + '"/><p class="title">Listening to <a target="_blank" href="'
+        + stationUrl + '">' + event.radio
+        + '</a> (<a title="Listen to other radio stations from ' +  event.radio
+        + '" href="http://streema.com/radios/search?q=' + encodeURIComponent(event.country)
+        + '">' + event.country + '</a>)<p><p>'
+        + appHtmlMap[event.app] + '</p>';
+    }
+
+    var buildTitle = function(event) {
+      return "Listening to " + event.radio;
+    }
+
+    L.mapbox.accessToken = 'pk.eyJ1IjoibWF0YWd1cyIsImEiOiJHaEdPVEQwIn0.-Ozf1tLmk77e8WsCXkxw1A';
     var map = L.mapbox.map('map', 'matagus.jni44nnb');
 
     map.attributionControl.addAttribution(
@@ -44,40 +72,49 @@
 
     map.legendControl.addLegend(document.getElementById('legend').innerHTML);
     var markers = new L.MarkerClusterGroup();
+    map.addLayer(markers);
 
-    /* geodata variable comes from //matagus.github.io/geo/data.js ! */
-    for (var i = 0; i < geoData.length; i++) {
-        var a = geoData[i];
-        var stationName = a[2].replace("_", "  ", "gi");
-        var stationUrl = "http://streema.com/radios/" + a[2] + utmQs;
+    function ws_init(url) {
+      console.log("connecting to" + url + "...");
+      ws = new WebSocket(url);
 
-        var appHtml = '<a href="http://streema.com/" target="_blank">Streema Mobile Web</a>';
-        var rand = Math.random();
-        if (rand > 0.7) {
-          appHtml = '<a href="https://itunes.apple.com/us/app/simple-radio-tune-in-to-your/id891132290?mt=8" target="_blank">SimpleRadio for iOS</a>';
-        } else {
-          if (rand > 0.2) {
-              appHtml = '<a href="http://streema.com/" target="_blank">Streema Desktop Web</a>';
-          }
-        }
+      ws.onopen = function(){
+          console.log("Connection established");
+      };
 
-        var htmlText = '<img src="https://d2uykijsw1jrmd.cloudfront.net/media/cache/60/9b/609b8395e4efc71cf4aada0f7200aa5e.jpg" alt="'
-          + stationName + '"/><p>Guest user listening to <a target="_blank" href="' +
-          stationUrl + '">' + stationName  + '</a> from ' + appHtml + '</p>';
+      ws.onmessage = function(msg){
+        console.log("Message Received:  '" + msg.data + "'" );
 
-        var marker = L.marker(new L.LatLng(a[1], a[0]), {
+        var event = JSON.parse(msg.data);
+
+        var lat = parseFloat(event.geoloc[0]) + (Math.random() * 0.001);
+        var lon = parseFloat(event.geoloc[1]) + (Math.random() * 0.001);
+        var marker = L.marker(new L.LatLng(lat, lon), {
           icon: L.mapbox.marker.icon({
             'marker-symbol': 'music',
             'marker-color': 'f5c272',
             'marker-size': 'medium'
           }),
-          title: "Listening to " + stationName
+          title: buildTitle(event)
         });
 
-        marker.bindPopup(htmlText);
+        marker.bindPopup(buildHtmlText(event));
         markers.addLayer(marker);
+      };
+
+      ws.onclose = function(){
+          console.log("Connection Closed");
+      }
+
+      return ws;
     }
-    map.addLayer(markers);
+
+    function ws_close(){
+      console.log("closing connection..");
+      ws.close();
+    }
+
+    var ws = ws_init("ws:///serene-spire-8406.herokuapp.com/ws");
   });
 </script>
 </html>
