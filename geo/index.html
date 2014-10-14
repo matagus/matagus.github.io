@@ -9,6 +9,7 @@
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
   <script type="text/javascript" src="web_socket.js"> </script>
   <script type="text/javascript" src="swfobject.js"> </script>
+  <script type="text/javascript" src="flipclock.js"> </script>
   <style>
     body { margin:0; padding:0; }
     #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -22,12 +23,13 @@
   <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+  <link href='flipclock.css' rel='stylesheet' />
 </head>
 <!-- Set the display of this container to none so we can
      add it programmatically to `legendControl` -->
 <div id='legend' style='display:none;'>
   <h2>World Online Radio Listeners</h2>
-  <p><strong>Listeners count: </strong><span id="listeners-count"></span></p>
+  <p><strong>Total listeners: <div class="clock"></div></p>
   <p style="font-size: 1em;">This map shows where people are listening to radio stations in the last
     right now on <a href="http://streema.com/?utm_source=geomap&utm_medium=&utm_campaign=v1">
     Streema.com</a>.</p>
@@ -35,12 +37,14 @@
 <body>
   <div id='map'></div>
 </body>
-<script>
+<script type="text/javascript">
   $(document).ready(function() {
     var WEB_SOCKET_SWF_LOCATION = "WebSocketMain.swf";
     var utmQs = "utm_source=geomap&utm_medium=&utm_campaign=v1";
 
-    var listenersCount = 0;
+    var clock = $('.counter').FlipClock(0, {
+      clockFace: 'Counter'
+    });
 
     var buildHtmlText = function(event) {
 
@@ -97,8 +101,7 @@
       ws.onmessage = function(msg){
         console.log("Message Received:  '" + msg.data + "'" );
 
-        listenersCount += 1;
-        $("#listeners-count").text(listenersCount);
+        clock.increment();
 
         var event = JSON.parse(msg.data);
 
@@ -133,7 +136,6 @@
     }
 
     var ws = ws_init("ws:///serene-spire-8406.herokuapp.com/ws");
-    $("#listeners-count").remove()
   });
 </script>
 </html>
