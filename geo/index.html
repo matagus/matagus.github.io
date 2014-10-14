@@ -27,7 +27,7 @@
 <div id='legend' style='display:none;'>
   <h2>World Online Radio Listeners</h2>
   <p><strong>Listeners count: </strong><span id="listeners-count"></span></p>
-  <p>This map shows where people are listening to radio stations in the last
+  <p style="font-size: 1em;">This map shows where people are listening to radio stations in the last
     right now on <a href="http://streema.com/?utm_source=geomap&utm_medium=&utm_campaign=v1">
     Streema.com</a>.</p>
 </div>
@@ -130,6 +130,7 @@
     }
 
     var ws = ws_init("ws:///serene-spire-8406.herokuapp.com/ws");
+    $("#listeners-count").remove()
   });
 </script>
 </html>
