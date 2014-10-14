@@ -26,6 +26,7 @@
      add it programmatically to `legendControl` -->
 <div id='legend' style='display:none;'>
   <h2>World Online Radio Listeners</h2>
+  <p><strong>Listeners count: </strong><span id="listeners-count"></span></p>
   <p>This map shows where people are listening to radio stations in the last
     right now on <a href="http://streema.com/?utm_source=geomap&utm_medium=&utm_campaign=v1">
     Streema.com</a>.</p>
@@ -37,6 +38,8 @@
   $(document).ready(function() {
     var WEB_SOCKET_SWF_LOCATION = "WebSocketMain.swf";
     var utmQs = "utm_source=geomap&utm_medium=&utm_campaign=v1";
+
+    var listenersCount = 0;
 
     var buildHtmlText = function(event) {
 
@@ -91,6 +94,9 @@
       ws.onmessage = function(msg){
         console.log("Message Received:  '" + msg.data + "'" );
 
+        listenersCount += 1;
+        $("#listeners-count").text(listenersCount);
+
         var event = JSON.parse(msg.data);
 
         var lat = parseFloat(event.geoloc[0]) + (Math.random() * 0.001);
@@ -107,9 +113,6 @@
         marker.bindPopup(buildHtmlText(event));
         marker.on('mouseover', function(e) {
           this.openPopup();
-        });
-        marker.on('mouseout', function(e) {
-            this.closePopup();
         });
         markers.addLayer(marker);
       };
