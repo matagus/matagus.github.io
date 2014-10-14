@@ -36,12 +36,12 @@
 <script>
   $(document).ready(function() {
     var WEB_SOCKET_SWF_LOCATION = "WebSocketMain.swf";
-    var utmQs = "?utm_source=geomap&utm_medium=&utm_campaign=v1";
+    var utmQs = "utm_source=geomap&utm_medium=&utm_campaign=v1";
 
     var buildHtmlText = function(event) {
 
       var defaultImageUrl = "http://d2mglzznjku7il.cloudfront.net/img/radio-placeholder.jpg";
-      var stationUrl = "http://streema.com/radios/" + event.slug + utmQs;
+      var stationUrl = "http://streema.com/radios/" + event.slug + "?" + utmQs;
 
       var appHtmlMap = {
         'mobile': 'on <a href="http://streema.com/" target="_blank">Streema Mobile Web</a>',
@@ -49,13 +49,19 @@
         'desktop': 'on <a href="http://streema.com/" target="_blank">Streema Desktop Web</a>'
       }
 
-      return '<img onerror="this.width=this.height=50; this.src=\'http://d2mglzznjku7il.cloudfront.net/img/radio-placeholder.jpg\'" src="' + event.image + '" alt="'
-        + event.radio + '"/><p class="title">Listening to <a target="_blank" href="'
+      var stateHtml = '';
+      if (event.state) {
+        stateHtml = '<a target="_blank" title="Listen to other radio stations from ' +  event.radio
+        + '" href="http://streema.com/radios/search/?q='
+        + encodeURIComponent(event.state) + '">' + event.state + '</a>, '
+      }
+
+      return '<img onerror="this.width=this.height=50; this.src=\'http://d2mglzznjku7il.cloudfront.net/img/radio-placeholder.jpg\'" src="'
+        + event.image + '"/><p class="title">Listening to <a target="_blank" href="'
         + stationUrl + '">' + event.radio
-        + '</a> (<a title="Listen to other radio stations from ' +  event.radio
-        + '" href="http://streema.com/radios/search?q=' + encodeURIComponent(event.country)
-        + '">' + event.country + '</a>)<p><p>'
-        + appHtmlMap[event.app] + '</p>';
+        + '</a>, ' + stateHtml + '<a title="Listen to other radio stations from ' +  event.radio
+        + '" href="http://streema.com/radios/search/?q=' + encodeURIComponent(event.country)
+        + '">' + event.country + '</a></p><p>' + appHtmlMap[event.app] + '</p>';
     }
 
     var buildTitle = function(event) {
@@ -66,7 +72,7 @@
     var map = L.mapbox.map('map', 'matagus.jni44nnb');
 
     map.attributionControl.addAttribution(
-      'Brought to you by <a target="_blank" href="http://streema.com/' + utmQs +
+      'Brought to you by <a target="_blank" href="http://streema.com/?' + utmQs +
       '">&copy; Streema</a>'
     );
 
@@ -99,6 +105,12 @@
         });
 
         marker.bindPopup(buildHtmlText(event));
+        marker.on('mouseover', function(e) {
+          this.openPopup();
+        });
+        marker.on('mouseout', function(e) {
+            this.closePopup();
+        });
         markers.addLayer(marker);
       };
 
