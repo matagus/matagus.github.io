@@ -16,6 +16,7 @@
     #map div.leaflet-popup-content img { float: left; }
     #map div.leaflet-popup-content p { float: right; width: 70%; font-size: 1em; margin: 0; color: gray; }
     #map div.leaflet-popup-content p.title { color: black; font-size: 1.1em; margin: 0 0 5px; }
+    #map div.leaflet-popup-content p.title a.radio { font-weight: bold; }
     #map div.leaflet-popup-content { height: 110px; }
   </style>
   <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
@@ -54,17 +55,19 @@
 
       var stateHtml = '';
       if (event.state) {
-        stateHtml = '<a target="_blank" title="Listen to other radio stations from ' +  event.radio
-        + '" href="http://streema.com/radios/search/?q='
+        stateHtml = '<a target="_blank" title="Listen to other radio stations from '
+        +  event.state + '" href="http://streema.com/radios/search/?q='
         + encodeURIComponent(event.state) + '">' + event.state + '</a>, '
       }
 
       return '<img onerror="this.width=this.height=50; this.src=\'http://d2mglzznjku7il.cloudfront.net/img/radio-placeholder.jpg\'" src="'
         + event.image + '"/><p class="title">Listening to <a target="_blank" href="'
-        + stationUrl + '">' + event.radio
-        + '</a>, ' + stateHtml + '<a title="Listen to other radio stations from ' +  event.radio
-        + '" href="http://streema.com/radios/search/?q=' + encodeURIComponent(event.country)
-        + '">' + event.country + '</a></p><p>' + appHtmlMap[event.app] + '</p>';
+        + stationUrl + '" class="radio" title="Play ' + event.radio + ' ">' + event.radio
+        + '</a>, ' + stateHtml + '<a title="Listen to other radio stations from '
+        +  event.country
+        + '" href="http://streema.com/radios/search/?q='
+        + encodeURIComponent(event.country) + '">'
+        + event.country + '</a></p><p>' + appHtmlMap[event.app] + '</p>';
     }
 
     var buildTitle = function(event) {
