@@ -19,6 +19,18 @@
     #map div.leaflet-popup-content p.title { color: black; font-size: 1.1em; margin: 0 0 5px; }
     #map div.leaflet-popup-content p.title a.radio { font-weight: bold; }
     #map div.leaflet-popup-content { height: 110px; }
+
+    div.clock {
+        transform-origin: 0 0;
+        transform: scale(.35);
+        -ms-transform: scale(.35);
+        -webkit-transform-origin: 0 0;
+        -webkit-transform: scale(.35);
+        -o-transform-origin: 0 0;
+        -o-transform: scale(.35);
+        -moz-transform-origin: 0 0;
+        -moz-transform: scale(.35);
+    }
   </style>
   <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
@@ -29,7 +41,7 @@
      add it programmatically to `legendControl` -->
 <div id='legend' style='display:none;'>
   <h2>World Online Radio Listeners</h2>
-  <p><strong>Total listeners: <div class="clock"></div></p>
+  <div class="clock counter" style="width: 670px;"></div>
   <p style="font-size: 1em;">This map shows where people are listening to radio stations in the last
     right now on <a href="http://streema.com/?utm_source=geomap&utm_medium=&utm_campaign=v1">
     Streema.com</a>.</p>
@@ -42,8 +54,18 @@
     var WEB_SOCKET_SWF_LOCATION = "WebSocketMain.swf";
     var utmQs = "utm_source=geomap&utm_medium=&utm_campaign=v1";
 
+    var count = 0;
+
     var clock = $('.counter').FlipClock(0, {
       clockFace: 'Counter'
+    });
+
+    setTimeout(function() {
+      setInterval(function() {
+        clock = $('.counter').FlipClock(count, {
+          clockFace: 'Counter'
+        });
+      }, 2500);
     });
 
     var buildHtmlText = function(event) {
@@ -99,9 +121,7 @@
       };
 
       ws.onmessage = function(msg){
-        console.log("Message Received:  '" + msg.data + "'" );
-
-        clock.increment();
+        count += 1;
 
         var event = JSON.parse(msg.data);
 
