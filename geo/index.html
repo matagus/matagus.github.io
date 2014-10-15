@@ -9,39 +9,26 @@
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
   <script type="text/javascript" src="web_socket.js"> </script>
   <script type="text/javascript" src="swfobject.js"> </script>
-  <script type="text/javascript" src="flipclock.js"> </script>
   <style>
     body { margin:0; padding:0; }
-    #map { position:absolute; top:0; bottom:0; width:100%; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
     #map div.leaflet-popup-content { width: 250px !important; }
     #map div.leaflet-popup-content img { float: left; }
     #map div.leaflet-popup-content p { float: right; width: 70%; font-size: 1em; margin: 0; color: gray; }
     #map div.leaflet-popup-content p.title { color: black; font-size: 1.1em; margin: 0 0 5px; }
     #map div.leaflet-popup-content p.title a.radio { font-weight: bold; }
     #map div.leaflet-popup-content { height: 110px; }
-
-    div.clock {
-        transform-origin: 0 0;
-        transform: scale(.35);
-        -ms-transform: scale(.35);
-        -webkit-transform-origin: 0 0;
-        -webkit-transform: scale(.35);
-        -o-transform-origin: 0 0;
-        -o-transform: scale(.35);
-        -moz-transform-origin: 0 0;
-        -moz-transform: scale(.35);
-    }
+    .map-legend h2 { font-size: 1.4em; color: #2D91EE; }
   </style>
   <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
-  <link href='flipclock.css' rel='stylesheet' />
 </head>
 <!-- Set the display of this container to none so we can
      add it programmatically to `legendControl` -->
 <div id='legend' style='display:none;'>
   <h2>World Online Radio Listeners</h2>
-  <div class="clock counter" style="width: 670px;"></div>
+  <p><strong>Total listens:</strong> <span id="listeners-count">0</span></p>
   <p style="font-size: 1em;">This map shows where people are listening to radio stations in the last
     right now on <a href="http://streema.com/?utm_source=geomap&utm_medium=&utm_campaign=v1">
     Streema.com</a>.</p>
@@ -53,20 +40,7 @@
   $(document).ready(function() {
     var WEB_SOCKET_SWF_LOCATION = "WebSocketMain.swf";
     var utmQs = "utm_source=geomap&utm_medium=&utm_campaign=v1";
-
     var count = 0;
-
-    var clock = $('.counter').FlipClock(0, {
-      clockFace: 'Counter'
-    });
-
-    setTimeout(function() {
-      setInterval(function() {
-        clock = $('.counter').FlipClock(count, {
-          clockFace: 'Counter'
-        });
-      }, 2500);
-    });
 
     var buildHtmlText = function(event) {
 
@@ -122,6 +96,7 @@
 
       ws.onmessage = function(msg){
         count += 1;
+        $("#listeners-count").text(count);
 
         var event = JSON.parse(msg.data);
 
@@ -156,6 +131,7 @@
     }
 
     var ws = ws_init("ws:///serene-spire-8406.herokuapp.com/ws");
+    $("#listeners-count").remove()
   });
 </script>
 </html>
