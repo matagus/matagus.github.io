@@ -19,6 +19,7 @@
     #map div.leaflet-popup-content p.title a.radio { font-weight: bold; }
     #map div.leaflet-popup-content { height: 110px; }
     .map-legend h2 { font-size: 1.4em; color: #2D91EE; }
+    .map-legend small { line-height: 0.6em; }
   </style>
   <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
@@ -28,10 +29,11 @@
      add it programmatically to `legendControl` -->
 <div id='legend' style='display:none;'>
   <h2>World Online Radio Listeners</h2>
-  <p><strong>Total listens:</strong> <span id="listeners-count">0</span></p>
-  <p style="font-size: 1em;">This map shows where people are listening to radio stations in the last
-    right now on <a href="http://streema.com/?utm_source=geomap&utm_medium=&utm_campaign=v1">
+  <p><strong>Total listens:</strong> <span id="listeners-count">0</span> <small>(*)</small></p>
+  <p style="font-size: 1em;">This map shows where people are listening to radio
+    stations from right now on <a href="http://streema.com/?utm_source=geomap&utm_medium=&utm_campaign=v1">
     Streema.com</a>.</p>
+  <small>(*) Map and counter will be reseted when listens counter reachs 1,000,000.</small>
 </div>
 <body>
   <div id='map'></div>
@@ -41,6 +43,12 @@
     var WEB_SOCKET_SWF_LOCATION = "WebSocketMain.swf";
     var utmQs = "utm_source=geomap&utm_medium=&utm_campaign=v1";
     var count = 0;
+
+    setTimeout(function() {
+      setInterval(function() {
+        $("#listeners-count").text(count);
+      }, 1000);
+    });
 
     var buildHtmlText = function(event) {
 
@@ -95,8 +103,11 @@
       };
 
       ws.onmessage = function(msg){
+        if (count > 999999) {
+          count = 0;
+          markers.clearLayers()
+        }
         count += 1;
-        $("#listeners-count").text(count);
 
         var event = JSON.parse(msg.data);
 
@@ -130,7 +141,7 @@
       ws.close();
     }
 
-    var ws = ws_init("ws:///serene-spire-8406.herokuapp.com/ws");
+    var ws = ws_init("ws:///streema-panopticon.herokuapp.com/ws");
     $("#listeners-count").remove()
   });
 </script>
