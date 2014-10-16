@@ -118,6 +118,7 @@
       ws.onmessage = function(msg){
         if (count > 999999) {
           count = 0;
+          displayedTuneins = [];
           markers.clearLayers();
         };
 
