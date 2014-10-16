@@ -9,6 +9,11 @@
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
   <script type="text/javascript" src="web_socket.js"> </script>
   <script type="text/javascript" src="swfobject.js"> </script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-zoomslider/v0.7.0/L.Control.Zoomslider.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+  <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+  <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-zoomslider/v0.7.0/L.Control.Zoomslider.css' rel='stylesheet' />
   <style>
     body { margin:0; padding:0; }
     #map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -20,10 +25,14 @@
     #map div.leaflet-popup-content { height: 110px; }
     .map-legend h2 { font-size: 1.4em; color: #2D91EE; }
     .map-legend small { line-height: 0.6em; }
+    /* Adjustments to account for mapbox.css box-sizing rules */
+    .leaflet-control-zoomslider-knob { width:14px; height:6px; }
+    .leaflet-container .leaflet-control-zoomslider-body {
+      -webkit-box-sizing:content-box;
+         -moz-box-sizing:content-box;
+              box-sizing:content-box;
+      }
   </style>
-  <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
-  <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
 </head>
 <!-- Set the display of this container to none so we can
      add it programmatically to `legendControl` -->
@@ -84,7 +93,7 @@
     }
 
     L.mapbox.accessToken = 'pk.eyJ1IjoibWF0YWd1cyIsImEiOiJHaEdPVEQwIn0.-Ozf1tLmk77e8WsCXkxw1A';
-    var map = L.mapbox.map('map', 'matagus.jni44nnb');
+    var map = L.mapbox.map('map', 'matagus.jni44nnb', { zoomControl: false });
 
     map.attributionControl.addAttribution(
       'Brought to you by <a target="_blank" href="http://streema.com/?' + utmQs +
@@ -92,6 +101,9 @@
     );
 
     map.legendControl.addLegend(document.getElementById('legend').innerHTML);
+
+    L.control.zoomslider().addTo(map);
+
     var markers = new L.MarkerClusterGroup();
     map.addLayer(markers);
 
