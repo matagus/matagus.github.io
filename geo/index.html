@@ -43,6 +43,7 @@
     var WEB_SOCKET_SWF_LOCATION = "WebSocketMain.swf";
     var utmQs = "utm_source=geomap&utm_medium=&utm_campaign=v1";
     var count = 0;
+    var displayedTuneins = [];
 
     setTimeout(function() {
       setInterval(function() {
@@ -105,15 +106,23 @@
       ws.onmessage = function(msg){
         if (count > 999999) {
           count = 0;
-          markers.clearLayers()
-        }
-        count += 1;
+          markers.clearLayers();
+        };
 
         var event = JSON.parse(msg.data);
 
-        var lat = parseFloat(event.geoloc[0]) + (Math.random() * 0.001);
-        var lon = parseFloat(event.geoloc[1]) + (Math.random() * 0.001);
+        if (displayedTuneins.indexOf(event.uuid) > -1) {
+          // tunein already shown! Do not display it.
+          return;
+        }
+
+        count += 1;
+        displayedTuneins.push(event.uuid);
+
+        var lat = parseFloat(event.geoloc[0]) + (Math.random() * 0.0001);
+        var lon = parseFloat(event.geoloc[1]) + (Math.random() * 0.0001);
         var marker = L.marker(new L.LatLng(lat, lon), {
+          id: 'marker-' + event.uuid,
           icon: L.mapbox.marker.icon({
             'marker-symbol': 'music',
             'marker-color': 'f5c272',
