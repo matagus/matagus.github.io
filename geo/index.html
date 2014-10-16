@@ -104,7 +104,7 @@
 
     L.control.zoomslider().addTo(map);
 
-    var markers = new L.MarkerClusterGroup();
+    var markers = new L.MarkerClusterGroup({ disableClusteringAtZoom: 17 });
     map.addLayer(markers);
 
     function ws_init(url) {
@@ -132,8 +132,8 @@
         count += 1;
         displayedTuneins.push(event.uuid);
 
-        var lat = parseFloat(event.geoloc[0]) + (Math.random() * 0.0001);
-        var lon = parseFloat(event.geoloc[1]) + (Math.random() * 0.0001);
+        var lat = parseFloat(event.geoloc[0]) + (Math.random() * 0.001);
+        var lon = parseFloat(event.geoloc[1]) + (Math.random() * 0.001);
         var marker = L.marker(new L.LatLng(lat, lon), {
           id: 'marker-' + event.uuid,
           icon: L.mapbox.marker.icon({
