@@ -11,7 +11,25 @@ player.ima(options);
 // will make it for you, but not as the result of a user action. For more info
 // see our examples, all of which are set up to work on mobile devices.
 // player.ima.initializeAdDisplayContainer();
-//
-player.ima.requestAds();
 
-player.play()
+player.ima.setAdBreakReadyListener(
+  function() {
+    console.log('>> setAdBreakReadyListener!');
+  }
+);
+
+player.ima.addContentEndedListener(
+  function() {
+    console.log('>> addContentEndedListener!');
+  }
+);
+
+player.ima.addContentAndAdsEndedListener(
+  function() {
+    console.log('>> addContentAndAdsEndedListener!');
+    player.play()
+  }
+);
+
+//player.ima.requestAds();
+
