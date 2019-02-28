@@ -11,3 +11,7 @@ player.ima(options);
 // will make it for you, but not as the result of a user action. For more info
 // see our examples, all of which are set up to work on mobile devices.
 // player.ima.initializeAdDisplayContainer();
+//
+player.ima.requestAds();
+
+player.play()
