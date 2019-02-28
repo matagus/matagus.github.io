@@ -2,7 +2,8 @@ var player = videojs('content_video');
 
 var options = {
   id: 'content_video',
-  adTagUrl: 'https://secure.adnxs.com/ptv?id=10898046&appid=com.streema.simpleradio&ip=181.30.66.163&loc=-36.77698,-59.85854'
+  //adTagUrl: 'https://secure.adnxs.com/ptv?id=10898046&appid=com.streema.simpleradio&ip=181.30.66.163&loc=-36.77698,-59.85854'
+  adTagUrl: 'http://demo.tremorvideo.com/proddev/vast/vast2RegularLinear.xml'
 };
 
 player.ima(options);
