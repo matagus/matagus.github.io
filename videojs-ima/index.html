@@ -4,11 +4,28 @@
     <link href="/videojs-ima/video-js.css" rel="stylesheet">
     <link rel="stylesheet" href="/videojs-ima/videojs-contrib-ads.css" />
     <link rel="stylesheet" href="/videojs-ima/videojs.ima.css" />
+    <style>
+			/* Audio: Remove big play button (leave only the button in controls). */
+			.video-js.vjs-audio .vjs-big-play-button {
+				display: none;
+			}
+			/* Audio: Make the controlbar visible by default */
+			.video-js.vjs-audio .vjs-control-bar {
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+			}
+			/* Make player height minimum to the controls height so when we hide video/poster area the controls are displayed correctly. */
+			.video-js.vjs-audio {
+				min-height: 3em;
+			}
+    </style>
   </head>
 
   <body>
     <video id="content_video" class="video-js vjs-default-skin"
-        controls preload="auto" width="500" height="250" data-setup='{ "inactivityTimeout": 0 }' >
+        controls preload="auto" width="500" height="250" data-setup='{"inactivityTimeout": 0, "aspectRatio": "1:0", "fluid": true, "controlBar": {"fullscreenToggle": false}}' >
       <source src="http://199.101.51.168:8058/stream" type="audio/mpeg" />
     </video>
     <!-- Load dependent scripts -->
