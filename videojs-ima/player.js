@@ -12,24 +12,24 @@ player.ima(options);
 // see our examples, all of which are set up to work on mobile devices.
 // player.ima.initializeAdDisplayContainer();
 
-player.ima.setAdBreakReadyListener(
-  function() {
-    console.log('>> setAdBreakReadyListener!');
-  }
-);
+//player.ima.setAdBreakReadyListener(
+  //function() {
+    //console.log('>> setAdBreakReadyListener!');
+  //}
+//);
 
-player.ima.addContentEndedListener(
-  function() {
-    console.log('>> addContentEndedListener!');
-  }
-);
+//player.ima.addContentEndedListener(
+  //function() {
+    //console.log('>> addContentEndedListener!');
+  //}
+//);
 
-player.ima.addContentAndAdsEndedListener(
-  function() {
-    console.log('>> addContentAndAdsEndedListener!');
-    player.play()
-  }
-);
+//player.ima.addContentAndAdsEndedListener(
+  //function() {
+    //console.log('>> addContentAndAdsEndedListener!');
+    //player.play()
+  //}
+//);
 
 //player.ima.requestAds();
 
