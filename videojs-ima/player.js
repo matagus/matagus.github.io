@@ -12,23 +12,21 @@ player.ima(options);
 // see our examples, all of which are set up to work on mobile devices.
 // player.ima.initializeAdDisplayContainer();
 
-player.ima.setAdBreakReadyListener(
-  function() {
-    console.log('>> setAdBreakReadyListener!');
-  }
-);
-
-player.ima.addContentEndedListener(
-  function() {
-    console.log('>> addContentEndedListener!');
-  }
-);
-
-player.ima.addContentAndAdsEndedListener(
-  function() {
-    console.log('>> addContentAndAdsEndedListener!');
-    player.play()
-  }
-);
-
 //player.ima.requestAds();
+
+var events = [
+	google.ima.AdEvent.Type.ALL_ADS_COMPLETED,
+	google.ima.AdEvent.Type.CLICK,
+	google.ima.AdEvent.Type.COMPLETE,
+	google.ima.AdEvent.Type.FIRST_QUARTILE,
+	google.ima.AdEvent.Type.LOADED,
+	google.ima.AdEvent.Type.MIDPOINT,
+	google.ima.AdEvent.Type.PAUSED,
+	google.ima.AdEvent.Type.RESUMED,
+	google.ima.AdEvent.Type.STARTED,
+	google.ima.AdEvent.Type.THIRD_QUARTILE
+];
+
+for (var index = 0; index < events.length; index++) {
+	player.ima.addEventListener(events[index], function(event) { console.log(event.type); });
+};
