@@ -43,7 +43,7 @@ var initAdDisplayContainer = function() {
       console.log(e);
       var eventLogElem = document.getElementById('event-log');
       var newItem = document.createElement("li");
-      var itemText = document.createTextNode((new Date()).toString() + ': ' + e.type);
+      var itemText = document.createTextNode((new Date()).toJSON() + ': ' + e.type);
       newItem.appendChild(itemText);
       eventLogElem.appendChild(newItem);
     });
