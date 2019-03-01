@@ -26,8 +26,11 @@ var events = [
 	google.ima.AdEvent.Type.THIRD_QUARTILE
 ];
 
-for (var index = 0; index < events.length; index++) {
-	player.ima.addEventListener(events[index], function(event) { console.log(event.type); });
-};
+player.ima.addEventListener('allAdsCompleted', function(event) { console.log(event.type); player.play(); });
+player.ima.addEventListener('loaded', function(event) { console.log(event.type); });
+player.ima.addEventListener('start', function(event) { console.log(event.type); });
+player.ima.addEventListener('complete', function(event) { console.log(event.type); });
+player.ima.addEventListener('midpoint', function(event) { console.log(event.type); });
+player.ima.addEventListener('adProgress', function(event) { console.log(event); });
 
 player.ima(options);
