@@ -36,12 +36,18 @@ var initAdDisplayContainer = function() {
   player.ima.initializeAdDisplayContainer();
   wrapperDiv.removeEventListener(startEvent, initAdDisplayContainer);
 
-  player.ima.addEventListener('allAdsCompleted', function(event) { console.log(event.type); player.play(); });
-  player.ima.addEventListener('loaded', function(event) { console.log(event.type); });
-  player.ima.addEventListener('start', function(event) { console.log(event.type); });
-  player.ima.addEventListener('complete', function(event) { console.log(event.type); });
-  player.ima.addEventListener('midpoint', function(event) { console.log(event.type); });
-  player.ima.addEventListener('adProgress', function(event) { console.log(event); });
+  player.ima.addEventListener(google.ima.AdEvent.Type.ALL_ADS_COMPLETED, function(event) { console.log(event.type); player.play(); });
+
+  events.forEach(function(eventType) {
+    player.ima.addEventListener(eventType, function(e) {
+      console.log(e);
+      var eventLogElem = document.getElementById('event-log');
+      var newItem = document.createElement("li");
+      var itemText = document.createTextNode((new Date()).toString() + ': ' + e.type);
+      newItem.appendChild(itemText);
+      eventLogElem.appendChild(newItem);
+    });
+  });
 }
 
 var wrapperDiv = document.getElementById('content_video');
