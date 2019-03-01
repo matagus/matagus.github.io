@@ -26,11 +26,23 @@ var events = [
 	google.ima.AdEvent.Type.THIRD_QUARTILE
 ];
 
-player.ima.addEventListener('allAdsCompleted', function(event) { console.log(event.type); player.play(); });
-player.ima.addEventListener('loaded', function(event) { console.log(event.type); });
-player.ima.addEventListener('start', function(event) { console.log(event.type); });
-player.ima.addEventListener('complete', function(event) { console.log(event.type); });
-player.ima.addEventListener('midpoint', function(event) { console.log(event.type); });
-player.ima.addEventListener('adProgress', function(event) { console.log(event); });
-
 player.ima(options);
+
+var startEvent = 'click';
+
+var initAdDisplayContainer = function() {
+  // Initialize the ad container when the video player is clicked, but only the
+  // first time it's clicked.
+  player.ima.initializeAdDisplayContainer();
+  wrapperDiv.removeEventListener(startEvent, initAdDisplayContainer);
+
+  player.ima.addEventListener('allAdsCompleted', function(event) { console.log(event.type); player.play(); });
+  player.ima.addEventListener('loaded', function(event) { console.log(event.type); });
+  player.ima.addEventListener('start', function(event) { console.log(event.type); });
+  player.ima.addEventListener('complete', function(event) { console.log(event.type); });
+  player.ima.addEventListener('midpoint', function(event) { console.log(event.type); });
+  player.ima.addEventListener('adProgress', function(event) { console.log(event); });
+}
+
+var wrapperDiv = document.getElementById('content_video');
+wrapperDiv.addEventListener(startEvent, initAdDisplayContainer);
