@@ -5,7 +5,6 @@ var options = {
   adTagUrl: 'https://secure.adnxs.com/ptv?id=10898046&appid=com.streema.simpleradio'
 };
 
-player.ima(options);
 // On mobile devices, you must call initializeAdDisplayContainer as the result
 // of a user action (e.g. button click). If you do not make this call, the SDK
 // will make it for you, but not as the result of a user action. For more info
@@ -30,3 +29,5 @@ var events = [
 for (var index = 0; index < events.length; index++) {
 	player.ima.addEventListener(events[index], function(event) { console.log(event.type); });
 };
+
+player.ima(options);
