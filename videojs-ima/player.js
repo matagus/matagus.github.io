@@ -2,7 +2,7 @@ var player = videojs('content_video');
 
 var options = {
   id: 'content_video',
-  adTagUrl: 'https://secure.adnxs.com/ptv?id=10898046&appid=com.streema.simpleradio'
+  adTagUrl: 'https://pubads.g.doubleclick.net/gampad/ads?iu=/69201673/Preroll-Test&description_url=http%3A%2F%2Fstreema.com&env=vp&impl=s&correlator=&tfcd=0&npa=0&gdfp_req=1&output=vast&sz=1x1&unviewed_position_start=1'
 };
 
 // On mobile devices, you must call initializeAdDisplayContainer as the result
