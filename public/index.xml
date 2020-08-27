@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>matagus</title>
+    <link>https://matagus.github.io/</link>
+    <description>Recent content on matagus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Copyright notice</copyright>
+    <lastBuildDate>Thu, 27 Aug 2020 15:57:19 -0300</lastBuildDate>
+    
+	<atom:link href="https://matagus.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About Me</title>
+      <link>https://matagus.github.io/about-me/</link>
+      <pubDate>Thu, 27 Aug 2020 20:18:19 -0300</pubDate>
+      
+      <guid>https://matagus.github.io/about-me/</guid>
+      <description>Hi!</description>
+    </item>
+    
+    <item>
+      <title>My First Post</title>
+      <link>https://matagus.github.io/2020/08/my-first-post/</link>
+      <pubDate>Thu, 27 Aug 2020 15:57:19 -0300</pubDate>
+      
+      <guid>https://matagus.github.io/2020/08/my-first-post/</guid>
+      <description>This is the content of my first blog post!</description>
+    </item>
+    
+  </channel>
+</rss>

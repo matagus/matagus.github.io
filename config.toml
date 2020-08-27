@@ -1,0 +1,86 @@
+baseURL = "https://matagus.github.io/"
+languageCode = "en-us"
+title = "matagus"
+theme = "hugo-ink"
+paginate = 5
+copyright = "© Copyright notice"
+
+pygmentsstyle = "vs"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+googleAnalytics = "UA-1607174-15"
+disqusShortname = "matagus-github-io"
+
+[permalinks]
+  posts = "/:year/:month/:title/"
+
+[params]
+	subtitle = "current status: 🐼"
+
+	# Optional 64x64 avatar image.
+	#avatar = "https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg"
+
+	# Content types to disable Disqus on.
+	disableDisqusTypes = ["page"]
+
+	featherIconsCDN = true
+
+	#mode = "auto" # "dark" or "auto"
+	# customCSS = "css/custom.css"  # Custom CSS applied to default styles.
+	# customDarkCSS = "css/custom-dark.css"  # Custom styles applied to dark mode css.
+	# customJS = ["js/custom.js", "js/custom1.js"]  # Custom JS scripts.
+
+# Nav.
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All posts"
+url = "/posts/"
+weight = 2
+
+[[menu.main]]
+name = "Tags"
+url = "/tags/"
+weight = 3
+
+[[menu.main]]
+name = "About me"
+url = "/about-me/"
+weight = 4
+
+[[params.social]]
+name = "Books I'm reading"
+icon = "book"
+url = "https://www.goodreads.com/user/show/4930036-matagus"
+
+[[params.social]]
+name = "Posts I'm reading"
+icon = "file"
+url = "https://getpocket.com/@644ged34p1974A24b3T6c35T1cA8p1a87f4p05Vb62Ge0lg268647e5bFe9Jd3a0"
+
+[[params.social]]
+name = "Listening to"
+icon = "music"
+url = "https://mixcloud.com/matagus"
+
+[[params.social]]
+name = "StackOverflow"
+icon = "edit"
+url = "https://stackoverflow.com/users/3219121/matagus"
+
+[[params.social]]
+name = "Github Profile"
+icon = "github"
+url = "https://github.com/matagus"
+
+[[params.social]]
+name = "RSS Feed"
+icon = "rss"
+url = "/index.xml"
+
+[taxonomies]
+   tag = "tags"
