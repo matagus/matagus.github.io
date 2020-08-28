@@ -1,9 +1,9 @@
 baseURL = "https://matagus.github.io/"
-languageCode = "en-us"
 title = "matagus"
 theme = "hugo-ink"
 paginate = 5
-copyright = "© Copyright notice"
+DefaultContentLanguage = "en"
+languageCode = "en-us"
 
 pygmentsstyle = "vs"
 pygmentscodefences = true
@@ -16,11 +16,22 @@ disqusShortname = "matagus-github-io"
 [permalinks]
   posts = "/:year/:month/:title/"
 
+[languages]
+  [languages.es]
+    languageName = "Español"
+    copyright = "© Copyright"
+    weight = 2
+  [languages.en]
+    languageName = "English"
+    weight = 1
+    copyright = "© Copyright"
+
 [params]
 	subtitle = "current status: 🐼"
 
 	# Optional 64x64 avatar image.
 	#avatar = "https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg"
+    avatar = "https://1.gravatar.com/avatar/db3b3decf3a49e94f49172034f5df598?s=64&d=mm"
 
 	# Content types to disable Disqus on.
 	disableDisqusTypes = ["page"]
@@ -33,24 +44,44 @@ disqusShortname = "matagus-github-io"
 	# customJS = ["js/custom.js", "js/custom1.js"]  # Custom JS scripts.
 
 # Nav.
-[[menu.main]]
+[[languages.en.menu.main]]
 name = "Home"
 url = "/"
 weight = 1
 
-[[menu.main]]
+[[languages.en.menu.main]]
 name = "All posts"
 url = "/posts/"
 weight = 2
 
-[[menu.main]]
+[[languages.en.menu.main]]
 name = "Tags"
 url = "/tags/"
 weight = 3
 
-[[menu.main]]
+[[languages.en.menu.main]]
 name = "About me"
 url = "/about-me/"
+weight = 4
+
+[[languages.es.menu.main]]
+name = "Home"
+url = "/es/"
+weight = 1
+
+[[languages.es.menu.main]]
+name = "Artículos"
+url = "/es/posts/"
+weight = 2
+
+[[languages.es.menu.main]]
+name = "Etiquetas"
+url = "/es/tags/"
+weight = 3
+
+[[languages.es.menu.main]]
+name = "Sobre mí"
+url = "/es/sobre-mi/"
 weight = 4
 
 [[params.social]]

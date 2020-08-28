@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://matagus.github.io/es/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://matagus.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://matagus.github.io/es/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://matagus.github.io/es/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://matagus.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://matagus.github.io/es/tags/"
+                />
+  </url>
+  
+</urlset>

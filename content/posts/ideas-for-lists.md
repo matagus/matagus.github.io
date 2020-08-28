@@ -8,3 +8,4 @@ draft: true
 * Awesome *
 * Minimalistic Gbif Catalog
 * Static Goodreads
+* Podcast Directory

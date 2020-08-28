@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://matagus.github.io/about-me/</loc>
+    <lastmod>2020-08-27T20:18:19-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://matagus.github.io/en/about-me/</loc>
+    <lastmod>2020-08-27T20:18:19-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://matagus.github.io/en/</loc>
+    <lastmod>2020-08-27T20:18:19-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://matagus.github.io/es/</loc>
+    <lastmod>2020-08-27T20:18:19-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://matagus.github.io/</loc>
+    <lastmod>2020-08-27T20:18:19-03:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://matagus.github.io/es/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://matagus.github.io/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://matagus.github.io/es/sobre-mi/</loc>
+    <lastmod>2020-08-27T20:18:19-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://matagus.github.io/2020/08/my-first-post/</loc>
+    <lastmod>2020-08-27T15:57:19-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://matagus.github.io/posts/</loc>
+    <lastmod>2020-08-27T15:57:19-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://matagus.github.io/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://matagus.github.io/es/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://matagus.github.io/tags/"
+                />
+  </url>
+  
+</urlset>
