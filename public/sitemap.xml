@@ -3,22 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://matagus.github.io/2020/08/ideas-for-lists/</loc>
+    <lastmod>2020-08-28T04:07:25-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://matagus.github.io/</loc>
+    <lastmod>2020-08-28T04:07:25-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://matagus.github.io/posts/</loc>
+    <lastmod>2020-08-28T04:07:25-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://matagus.github.io/about-me/</loc>
     <lastmod>2020-08-27T20:18:19-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://matagus.github.io/</loc>
-    <lastmod>2020-08-27T15:57:19-03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://matagus.github.io/2020/08/my-first-post/</loc>
-    <lastmod>2020-08-27T15:57:19-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://matagus.github.io/posts/</loc>
     <lastmod>2020-08-27T15:57:19-03:00</lastmod>
   </url>
   

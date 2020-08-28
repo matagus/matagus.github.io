@@ -9,6 +9,7 @@ pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
+enableRobotsTXT = true
 googleAnalytics = "UA-1607174-15"
 disqusShortname = "matagus-github-io"
 
