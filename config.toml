@@ -15,6 +15,7 @@ disqusShortname = "matagus-github-io"
 
 [permalinks]
   posts = "/:year/:month/:title/"
+  quotes = "/:year/:month/:title/"
 
 [languages]
   [languages.es]
@@ -32,6 +33,8 @@ disqusShortname = "matagus-github-io"
 	# Optional 64x64 avatar image.
 	#avatar = "https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg"
     avatar = "https://1.gravatar.com/avatar/db3b3decf3a49e94f49172034f5df598?s=64&d=mm"
+
+    mainSections = ["posts", "quotes"]
 
 	# Content types to disable Disqus on.
 	disableDisqusTypes = ["page"]
