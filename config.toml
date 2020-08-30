@@ -1,4 +1,4 @@
-baseURL = "https://matagus.alameda.dev/"
+baseURL = "https://matagus.github.io/"
 title = "matagus"
 theme = "hugo-ink"
 paginate = 5
