@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on matagus</title>
-    <link>https://matagus.github.io/es/tags/</link>
+    <link>https://matagus.alameda.dev/es/tags/</link>
     <description>Recent content in Tags on matagus</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright</copyright>
     
-	<atom:link href="https://matagus.github.io/es/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://matagus.alameda.dev/es/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

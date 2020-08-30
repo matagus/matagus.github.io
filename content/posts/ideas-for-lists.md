@@ -9,3 +9,6 @@ draft: true
 * Minimalistic Gbif Catalog
 * Static Goodreads
 * Podcast Directory
+* Tree Catalog / Directory
+* Open Source Garden
+* Directorio de Editoriales Independientes

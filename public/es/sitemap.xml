@@ -3,30 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://matagus.github.io/es/</loc>
+    <loc>https://matagus.alameda.dev/es/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://matagus.github.io/"
+                href="https://matagus.alameda.dev/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://matagus.github.io/es/"
+                href="https://matagus.alameda.dev/es/"
                 />
   </url>
   
   <url>
-    <loc>https://matagus.github.io/es/tags/</loc>
+    <loc>https://matagus.alameda.dev/es/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://matagus.github.io/tags/"
+                href="https://matagus.alameda.dev/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://matagus.github.io/es/tags/"
+                href="https://matagus.alameda.dev/es/tags/"
                 />
   </url>
   

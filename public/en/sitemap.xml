@@ -3,66 +3,66 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://matagus.github.io/about-me/</loc>
+    <loc>https://matagus.alameda.dev/about-me/</loc>
     <lastmod>2020-08-27T20:18:19-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://matagus.github.io/en/about-me/</loc>
+    <loc>https://matagus.alameda.dev/en/about-me/</loc>
     <lastmod>2020-08-27T20:18:19-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://matagus.github.io/en/</loc>
+    <loc>https://matagus.alameda.dev/en/</loc>
     <lastmod>2020-08-27T20:18:19-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://matagus.github.io/es/</loc>
+    <loc>https://matagus.alameda.dev/es/</loc>
     <lastmod>2020-08-27T20:18:19-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://matagus.github.io/</loc>
+    <loc>https://matagus.alameda.dev/</loc>
     <lastmod>2020-08-27T20:18:19-03:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://matagus.github.io/es/"
+                href="https://matagus.alameda.dev/es/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://matagus.github.io/"
+                href="https://matagus.alameda.dev/"
                 />
   </url>
   
   <url>
-    <loc>https://matagus.github.io/es/sobre-mi/</loc>
+    <loc>https://matagus.alameda.dev/es/sobre-mi/</loc>
     <lastmod>2020-08-27T20:18:19-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://matagus.github.io/2020/08/my-first-post/</loc>
+    <loc>https://matagus.alameda.dev/2020/08/my-first-post/</loc>
     <lastmod>2020-08-27T15:57:19-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://matagus.github.io/posts/</loc>
+    <loc>https://matagus.alameda.dev/posts/</loc>
     <lastmod>2020-08-27T15:57:19-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://matagus.github.io/tags/</loc>
+    <loc>https://matagus.alameda.dev/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="https://matagus.github.io/es/tags/"
+                href="https://matagus.alameda.dev/es/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://matagus.github.io/tags/"
+                href="https://matagus.alameda.dev/tags/"
                 />
   </url>
   
