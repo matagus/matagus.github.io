@@ -1,8 +1,37 @@
-body a, body .header nav.social a, body .footer a {
+body a, body .header nav.social a, body .footer a, body .post .tags a {
   color: rgb(43, 188, 138);
+}
+
+body .post .tags a {
+  border: 1px solid rgb(43, 188, 138);
+}
+
+body .post .tags ul li {
+  display: inline-block;
 }
 
 body a:hover, .header nav.social a:hover, body .footer a:hover {
   color: rgb(43, 188, 138);
   border-bottom: 2px solid rgb(43, 188, 138);
+}
+
+body .post .tags a:hover {
+  background-color: rgb(43, 188, 138);
+  color: white;
+}
+
+q::before {
+    content: no-open-quote;
+}
+
+q::after {
+    content: no-close-quote;
+}
+
+q {
+  font-style: italic;
+  color: gray;
+  border-left: 4px solid rgb(43, 188, 138);
+  display: block;
+  padding-left: 2%;
 }
