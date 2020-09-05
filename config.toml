@@ -1,5 +1,5 @@
 baseURL = "https://matagus.alameda.dev/"
-title = "matagus"
+title = "hi!"
 theme = "hugo-ink"
 paginate = 5
 DefaultContentLanguage = "en"
@@ -28,7 +28,7 @@ disqusShortname = "matagus-github-io"
     copyright = "© Copyright"
 
 [params]
-	subtitle = "current status: 🐼"
+	subtitle = "this is my website"
 
 	# Optional 64x64 avatar image.
 	#avatar = "https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg"
@@ -53,7 +53,7 @@ url = "/"
 weight = 1
 
 [[languages.en.menu.main]]
-name = "All posts"
+name = "Posts"
 url = "/posts/"
 weight = 2
 
