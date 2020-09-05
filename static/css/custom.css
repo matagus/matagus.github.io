@@ -1,0 +1,8 @@
+body a, body .header nav.social a, body .footer a {
+  color: rgb(43, 188, 138);
+}
+
+body a:hover, .header nav.social a:hover, body .footer a:hover {
+  color: rgb(43, 188, 138);
+  border-bottom: 2px solid rgb(43, 188, 138);
+}
