@@ -24,15 +24,10 @@
         <q cite="{{ .Params.Link }}">{{ .Content }}</q>
 			</div>
 
-			<ul class="markdown">
-        <li>
-          <b>Author</b>: {{ .Params.AuthorName }}
-        </li>
-        <li>
-          <b>Source</b>: <a href="{{ .Params.Link }}" target="_blank">{{ .Params.Link }}</a>
-        </li>
-      </ul>
-
+			<div class="markdown">
+        <b>Source</b>: <a href="{{ .Params.Link }}" target="_blank">{{ .Params.SourceTitle }}</a> by <i>{{ .Params.AuthorName }}</i>
+      </div>
+      <br/>
 			<div class="tags">
 				{{ if ne .Type "page" }}
 					{{ if gt .Params.tags 0 }}
