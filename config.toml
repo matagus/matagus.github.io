@@ -28,13 +28,13 @@ disqusShortname = "matagus-github-io"
     copyright = "© Copyright"
 
 [params]
-	subtitle = "this is my website"
+	subtitle = "notes on books and podcasts, ideas, etc"
 
 	# Optional 64x64 avatar image.
 	#avatar = "https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg"
     avatar = "https://1.gravatar.com/avatar/db3b3decf3a49e94f49172034f5df598?s=64&d=mm"
 
-    mainSections = ["posts", "quotes"]
+    mainSections = ["posts", "quotes", "podcasts"]
 
 	# Content types to disable Disqus on.
 	disableDisqusTypes = ["page"]
@@ -58,6 +58,11 @@ url = "/posts/"
 weight = 2
 
 [[languages.en.menu.main]]
+name = "Podcasts Notes"
+url = "/podcasts/"
+weight = 3
+
+[[languages.en.menu.main]]
 name = "Tags"
 url = "/tags/"
 weight = 3
@@ -76,6 +81,11 @@ weight = 1
 name = "Artículos"
 url = "/es/posts/"
 weight = 2
+
+[[languages.es.menu.main]]
+name = "Notas sobre Podcasts"
+url = "/es/podcasts/"
+weight = 3
 
 [[languages.es.menu.main]]
 name = "Etiquetas"
