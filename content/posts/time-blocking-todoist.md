@@ -53,6 +53,32 @@ Hay cuatro variaciones según cómo uno organice su tiempo:
 
 * **Time Boxing**: cuando uno se pone un límite de tiempo y debe cumplir con su objetivo sí o sí, así sea que la calidad es menor. Puede estar bueno esto [para obligarse a shippear](https://www.folklore.org/StoryView.py?story=Real_Artists_Ship.txt).
 
+
+## Por qué es efectivo?
+
+### Nos ejercita en el deep work
+
+Cuando uno reserva un bloque de tiempo y se pone a trabajar en una sóla tarea, proyecto o problema lo que estamos haciendo es poner todos nuestros recursos mentales en eso en vez de estar dividiendo nuestra atención entre varias tareass diferentes, saltando de un tema o problema a otro. Esto, además de provocar que nos enfoquemos en ella lo que hace es que ejercitemos nuestra capacidad para hacer deep work, es decir para lograr tener foco en algo y luego mantenerlo por el mayor tiempo posible que necesitemos.
+
+Creo que ahí hay algo clave: hay que practicar, ejercitarnos en esto de hacer deep work. Es comocuando empezamos a hacer un deporte, o volvemos a correr luego de muchos años, o aprendemos una nueva habilidad como conducir un auto o una bicicleta. Por eso que nos cueste no debe desanimarnos a proseguir prracticando.
+
+### Ayuda a combatir el shallow work más eficientemente
+
+El shallow work es uno de los enemigos al deep work: son tareas que son urgentes pero no importantes (papeleo, trámites, responder emails, contestar chats). Cuando reservamos un bloque de tiempo para por ejemplo responder todos nuestros emails en batch lo que hacemos es protegernos, evitar que luego estemos interrumpiendo otras tareas para ir y contestar uno o dos emails que no tienen nada que ver y hacen que nuestra mente cambie de contexto. Cuando armamos un batch de tareas relacionadas, estamos reduciendo acá también el cambio de contexto que tanto daño hace a nuestra concentración. Y en ambos casos, al limitar el tiempo que les dedicamos, estamos protegiéndonos de un impacto mayor en nuestra productividad.
+
+### Nos hace conscientes de cuánto tiempo invertimos en cada cosa
+
+Este es un beneficio colateral: al reservar bloques de tiempo y respetarlos, estamos ganando gratis un registro de cómo usamos nuestro tiempo. Esto es algo que algunos trabajadores le reclaman a otras metodologías como GTD y por eso terminan probando hacer Pomodoros, porque necesitan llevar este registro para luego facturar ese tiempo a sus empleadores o clientes.
+
+### Combate el perfeccionimo
+
+Dado que limitamos el tiempo que le dedicamos a algo, estamos forzándonos a lograr un resultado, nos parezca perfecto o no.
+
+### Nos ayuda a alcanzar nuestros objetivos
+
+Esta metodología nos obliga a hacer un plan para cada día, determinando bloques de tiempo en los que realizaremos cada tarea, y luego revisiones semanales. Es por eso que nos ayuda a alcanzar nuestros objetivos.
+
+
 ---
 
 **Nota**: acabo de recordar que hasta hace unos meses cuando trabajaba habíamos llegado intuitivamente a blockear ciertas horas de nuestros calendarios sobre todo para tareas de planning, tareas que no estaban en las stories de [la herramienta que usábamos para organizar nuestros sprints / iteraciones y los objetivos a alcanzar](https://shortcut.com/).
