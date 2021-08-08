@@ -5,6 +5,7 @@ tags:
 - scalability
 - simplicity
 - architecture
+description: Una anécdota + aprendizaje de cuando Pinterest empezó a crecer y tuvo que escalar su infraestructra.
 ---
 
 > When Pinterest was initially scaling their site back in 2011 to handle rapid growth, they used 6 different storage technologies (MySQL, Cassandra, Membase, Memcache, Redis, MongoDB) across a backend team of only 3 engineers. 1 Each new technology they experimented with promised on paper to address some limitation of their existing system. But instead, they found that each new solution just failed in its own special way and took more time and effort to manage and maintain. Eventually, the team learned that it would be simpler to scale by adding more machines rather than more technologies, so they eliminated systems like Cassandra and MongoDB and strengthened the remaining components of their architecture.

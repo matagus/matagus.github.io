@@ -1,6 +1,12 @@
 ---
 title: "Guía completa para hacer Time Blocking según Todoist"
 date: 2021-08-07T19:27:19-03:00
+tags:
+- deep work
+- future
+- time blocking
+- productivity
+description: Cómo utilizar este método de manejo de tiempo que según Cal Newport puede hacer que nuestras horas de trabajo rindan un 50% más.
 ---
 
 Hace unos días empecé a utlizar [Todoist](https://todoist.com/) (tanto la versión para iPhone como la de Desktop web en Firefox) para organizar mi vida en todos lo niveles: estudio, tareas de la vida diaria, research, ideas / proyectos, etc. Y como estoy escuchando mucho a [Cal Newport y su teoría del deep work](https://matagus.alameda.dev/2021/07/qu%C3%A9-es-el-deep-work/) me ví tenatdo a probar esta metodología de bloquear horas en mi calendario para poder concentrarme en ciertas cosas.
@@ -18,7 +24,7 @@ Entonces acá van unas notas que tomé mientras estudiaba [cómo implementar Tim
 
 Las oficinas y lugares de trabajo actuales son lugares que favorecen las interrupciones. Y además tenemos las reuniones por un lado, y por otro los emails y los chats, ambas actividades breves pero recurrentes, con muchos idas y vueltas. Si no controlamos estas cosas serán ellas las que nos controlen a nosotros.
 
-Algunos síntomas de que El Time Blocking podría beneficiarnos son:
+Algunos síntomas de que esta metodología podría beneficiarnos son:
 
 * Si nos hallamos muy seguido haciendo malabarismos entre varias responsabilidades muy diferentes
 * Si pasamos mucho tiempo en "modo reactivo", por ejemplo respondiendo emails y chats.

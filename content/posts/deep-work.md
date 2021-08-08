@@ -5,7 +5,9 @@ tags:
 - deep work
 - work
 - books
+description: Cal Newport define al Deep Work como "**la habilidad para concentrarse y dedicarse sin distraccionesa una tarea que es cognitivamente intensa**.
 ---
+
 [Cal Newport define al Deep Work ](https://www.calnewport.com/books/deep-work/)como "**la habilidad para concentrarse y dedicarse sin distraccionesa una tarea que es cognitivamente intensa**. Es la habilidad que nos permite comprehender rápidamente información compleja y producir los mejores resultados en poco tiempo".
 
 También destaca que el \_Deep Work \_nos hace mejores en nuestra trabajo, estudio o en aquello de lo que nos ocupemos, y que nos da un sentimiento de realización porque hace que dominemos la materia que nos ocupa.
