@@ -79,6 +79,43 @@ Dado que limitamos el tiempo que le dedicamos a algo, estamos forzándonos a log
 Esta metodología nos obliga a hacer un plan para cada día, determinando bloques de tiempo en los que realizaremos cada tarea, y luego revisiones semanales. Es por eso que nos ayuda a alcanzar nuestros objetivos.
 
 
+## ¿Funcionará el time blocking con mi trabajo?
+
+Tal vez la crítica más grande a esta metodología de organización de nuestro tiempo es que no sirve para trabajos que son puramente reactivos, como por ejemplo el de un agente de Customer Support, el cual tiene que estar respondiendo tickets o emails a medida que llegan.
+
+Lo que Cal Newport dice al respecto es:
+
+> Períodos de trabajo bien delimitados para hacer tareas reactivas pueden ser programados como cualquier otro tipo de obligación. Incluso si uno tiene bloques de trabajo reactivo que en suma ocupan la mayoría de nuestro día, lo que estamos logrando es controlar y limitar este tipo de trabajo y eso nos permite poder dedicarnos el resto del tiempo a algún deep work (o al menos algún periódo de tiempo que hayamos definido para ello).
+
+Con esto evitamos que nuestro ritmo de trabajo sea dictado por "fuerzas externas", lo cual haría que perdamos control de nuestros objetivos. Es decir que el Time Blocking nos da un gran sentido de control sobre ellos.
+
+
+## Errores comunes y cómo evitarlos
+
+...o cómo evitar convertirse en un esclavo de tu calendario.
+
+
+### Subestimar el tiempo que nos lleva una tarea
+
+Si bien uno se vuelve mejor con el tiempo y la práctica en esto de estima cuánto nos lleva una tarea determinada, al principio conviene siempre blockear más tiempo para cada tarea, o incluso programar "bloques condicionales".
+
+### Ser muy rigidos con nuestro calendario
+
+Lo importante es siempre tener presente que nuestro calendario es un plan para guiarnos, darnos claridad sobre nuestras prioridades y ayudarnos a concentrarnos en lo importante para cumplir nuestros objetivos. No es un contrato escrito en piedra.
+
+Por eso, si circunstancias impensadas arruinan nuestro plan, podemos modificarlo para adaptarnos a ellas.
+
+De nuevo Newport dice:
+
+> Este tipo de planning, en mi opinión, es como un juego de ajedres, donde los bloques de trabajo son distribuídos y priorizados de tal manera que nuestros proyectos lleguen a ser completados con el suficiente tiempo para separarlos y darnos un descanso.
+
+
+### Bloquear tiempo para para divertirnos en algo determinado
+
+Muchos estudios muestran que tener sobre-definidos y programado nuestro tiempo para divertirnos o esparcirnos provoca que no disfrutemos tando de ellos.
+
+En su lugar, lo aconsejable es no bloquear tiempo para ello pero sí dejar espacios libres en nuestro calndario, sin planear qué haremos en ellos. Eso nos va a dar más flexiblidad para decidir qué queremos hacer en el momento y así disfrutar más acorde a lo que sintamos en ese instante.
+
 ---
 
 **Nota**: acabo de recordar que hasta hace unos meses cuando trabajaba habíamos llegado intuitivamente a blockear ciertas horas de nuestros calendarios sobre todo para tareas de planning, tareas que no estaban en las stories de [la herramienta que usábamos para organizar nuestros sprints / iteraciones y los objetivos a alcanzar](https://shortcut.com/).
