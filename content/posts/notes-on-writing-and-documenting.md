@@ -51,11 +51,61 @@ Cosas que debería tener un README:
 * "Legales" (licencia, copyright, etc)
 
 
+### Tutoriales, instrucciones "paso a paso" y guías
+
+El README le presenta al usuario el proyecto: el tutorial en cambio le muestra algunos casos de uso muy comunes, le
+destaca patrones de uso, buenas prácticas y las características principales del mismo. La intención no es ir en
+profundidad pero sí mostrarle todo lo importante del proyecto y dejarle links a otras partes de la documentación que
+explican cada tópico o feature en detalle.
+
+Si bien en proyectos chicos lo más común es "insertar" un mini-tutorial en el README, en el resto, dada la extensión de
+la documentación, lo usual es usar una wiki, un blog con muchos posts al respecto, tener un sitio web entero dedicado a
+ella y/o uno o varios videos, incluso un podcast [agrego yo].
+
+Ejemplos de documentación muy buena (todos en inglés):
+
+* [Las guías de Ruby on Rails](http://guides.rubyonrails.org/)
+* [Django Docs](https://docs.djangoproject.com/en/3.2/)
+* [Los Quickstarts de Twillio](https://www.twilio.com/docs/quickstart)
+
+Lo mejor, sin embargo, son los tutoriales interactivos, que nos permiten ir aprendiendo haciendo algo paso a paso. Por
+ejemplo:
+
+* [A Tour of Go](https://tour.golang.org/welcome/1)
+* [Try Git](https://try.github.io/)
 
 
+### Documentación de Referencia
+
+También conocida en inglés como "Reference", la documentación de referencia tiene el propósito de ser el lugar al que
+quien está aprendiendo algo (un lenguage, un framework, una herramienta, una librería, etc) va a buscar un concepto,
+tópico, qué hace cierta función, método, clase, cualquier otra información útil y detallada. Algunos ejemplos:
+
+* [Documentación de Stripe](https://stripe.com/docs)
+* De nuevo la [Doc de Django](https://docs.djangoproject.com/en/3.2/)
+* La de [Sqlite](https://www.sqlite.org/docs.html)
+
+Para proyectos muy extensos, escribir y luego mantener al día documentación de referencia para cada parte del mismo es
+todo un desafío y mucho trabajo: por eso lo aconsejable es insertar documentación de cada una en el código, incluyendo
+también ejemplos de uso, y luego usar alguna herramienta o script que recorra todo el código y nos arme la doc de
+referencia. Así cada vez que el programador cambia el código notará que debe también cambiar el comentario-documentación
+y el ejemplo :)
 
 
+### Sitio Web del Proyecto
+
+Tener un sitio web entero dedicado a un proyecto de software es un gran ejemplo de
+[documentación como marketing](https://zachholman.com/posts/open-source-marketing/) del mismo: así nuestro proyecto
+puede tener su propia identidad, con su estilo, su look and feel, y todo su contenido es linkeable, indexable
+y por ende compartible en redes sociales o mensajería. Algunos ejemplos:
+
+* [Bootstrap](https://getbootstrap.com/)
+* [Jekyll](https://jekyllrb.com/)
+* [Yeoman](http://yeoman.io/)
+
+Una forma muy simple de hostear un sitio web para nuestro proyecto es utilizar [Github Pages](https://pages.github.com/).
 
 
+### White Papers y libros
 
 
