@@ -32,7 +32,7 @@ Source: [How to be an open source gardener](https://steveklabnik.com/writing/how
 
 Yendo un poco más allá: tal vez haya que ampliar el título a "We need better production environments"". No sólo para
 devs, y no sólo para open source projects. Tal vez esto tenga que ver también con lo que JS dice en su libro sobre
-scrum: ["Work doesn’t have to suck. It can flow; it can be an expression of joy, an alignment toward a higher purpose."](https://matagus.alameda.dev/2020/08/work-doesnt-have-to-suck/). Una vez que uno pone comienza a visualizar y entender cómo nos organizamos, cómo colaboramos, y cómo ello tiene un peso grandísimo en la cantidad de trabajo que hacemos, ahí es cuando comenzamos a preocuparnos más por mejorar todo eso.
+scrum: ["Work doesn’t have to suck. It can flow; it can be an expression of joy, an alignment toward a higher purpose."](/2020/08/work-doesnt-have-to-suck/). Una vez que uno pone comienza a visualizar y entender cómo nos organizamos, cómo colaboramos, y cómo ello tiene un peso grandísimo en la cantidad de trabajo que hacemos, ahí es cuando comenzamos a preocuparnos más por mejorar todo eso.
 
 ---
 

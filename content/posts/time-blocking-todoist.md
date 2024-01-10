@@ -9,7 +9,7 @@ tags:
 description: Cómo utilizar este método de manejo de tiempo que según Cal Newport puede hacer que nuestras horas de trabajo rindan un 50% más.
 ---
 
-Hace unos días empecé a utlizar [Todoist](https://todoist.com/) (tanto la versión para iPhone como la de Desktop web en Firefox) para organizar mi vida en todos lo niveles: estudio, tareas de la vida diaria, research, ideas / proyectos, etc. Y como estoy escuchando mucho a [Cal Newport y su teoría del deep work](https://matagus.alameda.dev/2021/07/qu%C3%A9-es-el-deep-work/) me ví tenatdo a probar esta metodología de bloquear horas en mi calendario para poder concentrarme en ciertas cosas.
+Hace unos días empecé a utlizar [Todoist](https://todoist.com/) (tanto la versión para iPhone como la de Desktop web en Firefox) para organizar mi vida en todos lo niveles: estudio, tareas de la vida diaria, research, ideas / proyectos, etc. Y como estoy escuchando mucho a [Cal Newport y su teoría del deep work](/2021/07/qu%C3%A9-es-el-deep-work/) me ví tenatdo a probar esta metodología de bloquear horas en mi calendario para poder concentrarme en ciertas cosas.
 
 Entonces acá van unas notas que tomé mientras estudiaba [cómo implementar Time Blocking usando Todoist](https://todoist.com/productivity-methods/time-blocking).
 
